@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-const pizza = [{"name": "pepperoni"}, {"price": 7.99}, {"catergory": `entree`}, {"popularity": 100}, {"raiting": 10}, {"tags": "['For everyone', 'gluten free']"}]
+const pizza = {
+name: "pepperoni",
+ price: 7.99, 
+ catergory: `entree`, 
+ popularity: 100, 
+ raiting: 10, 
+ tags: ['For everyone', 'gluten free']
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,7 +51,7 @@ const pizza = [{"name": "pepperoni"}, {"price": 7.99}, {"catergory": `entree`}, 
 
 //CODE HERE
 
-// console.log(pizza[3])
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -54,7 +61,7 @@ const pizza = [{"name": "pepperoni"}, {"price": 7.99}, {"catergory": `entree`}, 
 */
 
 //CODE HERE
-// console.log(pizza[5])
+// console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -64,9 +71,9 @@ const pizza = [{"name": "pepperoni"}, {"price": 7.99}, {"catergory": `entree`}, 
 */
 
 //CODE HERE
-const newPrice = [8.99]
-pizza[1] = newPrice
-// console.log(pizza)
+///destructure of object is {}
+const {price} = pizza
+// console.log(price)
 
 
 /*
@@ -77,9 +84,8 @@ pizza[1] = newPrice
 */
 
 //CODE HERE
-const newCategory = [`whole pie`]
-pizza[2] = newCategory
-// console.log(pizza[2])
+const {catergory} = pizza
+
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -94,8 +100,50 @@ pizza[2] = newCategory
 */
 
 //CODE HERE
-let foodArr = [{"name": "salad"}, {"price": 10} , {"catergory": `entree`}, {"popularity": 50}, {"raiting": 7}, {"tags": "['For everyone', 'gluten free']"}]
+let foodArr = [
+{"name": "salad"},
+{"price": 11} ,
+{"catergory": `app`},
+{"popularity": 50},
+{"raiting": 7},
+{"tags": "['For everyone', 'gluten free' `fresh` `popular`]"}
+]
 
+[
+    {"name": "mac"},
+    {"price": 11} ,
+    {"catergory": `entree`},
+    {"popularity": 80},
+    {"raiting": 9},
+    {"tags": "[`cheesy`, 'For everyone', 'gluten free']"}
+    ]
+    
+    [
+        {"name": "chicken"},
+        {"price": 20} ,
+        {"catergory": `main`},
+        {"popularity": 90},
+        {"raiting": 8},
+        {"tags": "['For everyone', 'gluten free' `crispy`]"}
+        ]
+       
+        [
+            {"name": "burger"},
+            {"price": 1} ,
+            {"catergory": `entree`},
+            {"popularity": 40},
+            {"raiting": 6},
+            {"tags": "['For everyone', 'gluten free' `nice`]"}
+            ]
+           
+            [
+                {"name": "cake"},
+                {"price": 5} ,
+                {"catergory": `desert`},
+                {"popularity": 90},
+                {"raiting": 10},
+                {"tags": "['For everyone', 'gluten free' `smelly` ]"}
+                ]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -110,7 +158,7 @@ let foodArr = [{"name": "salad"}, {"price": 10} , {"catergory": `entree`}, {"pop
 */
 
 //CODE HERE
-const filteredFood = foodArr.filter(foodArr => foodArr.name)
+const filteredFood = foodArr.filter(item => item.tags.includes(`popular`))
 // console.log(filteredFood)
 
 
@@ -156,15 +204,24 @@ const filteredFood = foodArr.filter(foodArr => foodArr.name)
 
 //CODE HERE
 const filterByProperty = (property, number, type) => {
- 
+    let filteredArr = foodArr.filter
+    foodArr.filter(item => {
+        if(type === `above`){
+            return item[property] > number
+        } else {
+            return item[property] < number
+        }
+    })
+    return filteredArr
 
 }
 
 
 /*
-    Invoke the `filterByProperty` function passing
-    in a value for each paramter.
+Invoke the `filterByProperty` function passing
+in a value for each paramter.
 
-    You'll have to console.log to see the filtered array
+You'll have to console.log to see the filtered array
 */
-console.log(filterByProperty(x,x,x))
+
+console.log(filterByProperty(`price`, 10, `above`))

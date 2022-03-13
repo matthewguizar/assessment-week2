@@ -37,7 +37,7 @@ const cart = [
 
 const summedPrice = cart.reduce((acc, cv) => acc + cv.price, 0)
 
-console.log((+summedPrice))
+console.log((summedPrice))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -57,9 +57,9 @@ console.log((+summedPrice))
 
 //CODE HERE
 const calcFinalPrice = (cartTotal, couponValue, tax) => {
-    summedPrice
+   return (cartTotal * tax) + cartTotal - couponValue
 }
-
+// console.log(calcFinalPrice(10,1,0.1))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -83,6 +83,7 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
 
 /*
     TEXT ANSWER HERE
+customer = 'name' for identity , 'email' to contact/confirm real person, 'payment info' to process payemnts, 'age' to verify over 18
 
 */
 
@@ -92,3 +93,10 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
 */
 
 //CODE HERE
+const customer = [{
+    name2: 'matthew',
+    email: 'realemail@real.net',
+    payment: 'Visa card xxxx-xxxx-xxxx',
+    age: 19
+
+}]

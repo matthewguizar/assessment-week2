@@ -22,12 +22,8 @@
 */
 
 //CODE HERE
-const greetUser = (username) =>{
-this.username = (`username`) 
-console.log(`Welcome back ${username}`)
-}
-console.log(greetUser(`username`))
-
+const greetUser = username =>  `welcome back, ${username}`
+// console.log(greetUser(`matthew`))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,16 +49,18 @@ console.log(greetUser(`username`))
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // CODE HERE
-const canWeDeliver = (zipCode) => {
-    this.zipCode = zipCode
-    if(zipCode !== deliveryAreaZipCodes)
-    console.log(`Sorry, we can't deliver to that address`)
-    else { 
-            console.log(`You're in the delivery zone`)
-    }
-    
-}
+// const canWeDeliver = (zipCode) => {
+// for (let i = 0; i < deliveryAreaZipCodes.length; i++){
+//     if(deliveryAreaZipCodes[i] === zipCode){
+//   return console.log(`youre in our delivery zone`)
 
+// } else {
+    
+//         }   
+//     } return console.log(`sorry we cant`)
+
+// }
+// canWeDeliver(90221)
 
 /* 
     Problem 2 Continued
@@ -82,12 +80,14 @@ const canWeDeliver = (zipCode) => {
 */
 
 // CODE HERE
-let canWeDeliverTwo = (zipcodes) =>{
-    this.zipcodes = zipcodes
-    zipcodes.includes(deliveryAreaZipCodes)
-    console.log(`You're in the delivery zone`)
-}
-
+// let canWeDeliverTwo = (zipcode) =>{
+//     if (deliveryAreaZipCodes.includes(zipcode)){
+//     console.log(`You're in the delivery zone`)
+//     } else {
+//         return console.log (`youre not in the zone`)
+//     }
+// }
+// canWeDeliverTwo(85205)
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -122,8 +122,9 @@ const deals = [
 */
 
 //CODE HERE
-console.log(deals.replace(15, 10))
-
+// console.log(deals.replace(15, 10))
+deals[0].title = deals[0].title.replace(`15`, `10`)
+// console.log(deals)
 
 /*
     The restaurant is going to continue its
@@ -139,3 +140,4 @@ console.log(deals.replace(15, 10))
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March','April').trim()
